@@ -7113,4 +7113,6 @@ Other Sun games
 	DRIVER( sliver )	/* (c) 1996 Hollow Corp */
 	DRIVER( intrscti )	/* ???? */
 
+    #include "acapulco/neodriver.c"
+
 #endif	/* DRIVER_RECURSIVE */

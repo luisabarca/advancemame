@@ -941,6 +941,7 @@ $(OBJ)/nasco.a: \
 	$(OBJ)/drivers/suprgolf.o \
 
 $(OBJ)/neogeo.a: \
+	$(OBJ)/acapulco/neo_drivers_def.o \
 	$(OBJ)/drivers/neogeo.o $(OBJ)/machine/neogeo.o $(OBJ)/vidhrdw/neogeo.o \
 	$(OBJ)/machine/neoboot.o \
 	$(OBJ)/machine/neocrypt.o \
@@ -1508,5 +1509,3 @@ $(OBJ)/misc.a: \
 	$(OBJ)/drivers/vroulet.o \
 	$(OBJ)/drivers/wldarrow.o \
 	$(OBJ)/drivers/xyonix.o $(OBJ)/vidhrdw/xyonix.o \
-
- 
