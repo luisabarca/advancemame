@@ -61,7 +61,7 @@ ADVANCECFLAGS += \
 	-DUSE_SOUND_SDL \
 	-DUSE_KEYBOARD_SDL \
 	-DUSE_MOUSE_SDL \
-	-DUSE_JOYSTICK_SDL 
+	-DUSE_JOYSTICK_SDL
 ADVANCELIBS += $(SDLLIBS)
 ADVANCEOBJS += \
 	$(OBJ)/advance/sdl/ssdl.o \
@@ -646,6 +646,7 @@ VPATH=$(wildcard $(srcdir)/src/cpu/* $(srcdir)/src/sound)
 
 OBJDIRS += \
 	$(ADVANCEOBJDIRS) \
+	$(OBJ)/acapulco \
 	$(OBJ)/cpu \
 	$(OBJ)/sound \
 	$(OBJ)/drivers \
@@ -756,7 +757,7 @@ $(sort $(OBJDIRS)):
 
 MESSADVANCEOBJS = $(subst $(OBJ),$(MESSOBJ),$(ADVANCEOBJS))
 
-$(MESSOBJ)/advmess$(EXE): $(sort $(MESSOBJDIRS)) $(MESSADVANCEOBJS) $(MESSOBJS) $(MESSLIBS) $(ADVANCEBUILDLIBS) 
+$(MESSOBJ)/advmess$(EXE): $(sort $(MESSOBJDIRS)) $(MESSADVANCEOBJS) $(MESSOBJS) $(MESSLIBS) $(ADVANCEBUILDLIBS)
 	$(ECHO) $@ $(MSG)
 	$(LD) $(MESSADVANCEOBJS) $(MESSOBJS) $(ADVANCELDFLAGS) $(LDFLAGS) $(MESSLIBS) $(ADVANCEBUILDLIBS) $(ADVANCELIBS) $(LIBS) -o $@
 ifeq ($(CONF_DEBUG),yes)
@@ -1182,4 +1183,3 @@ else
 	cd $(EMU_DIST_DIR_BIN) && zip -r ../$(EMU_DIST_FILE_BIN).zip *
 endif
 	rm -r $(EMU_DIST_DIR_BIN)
-
